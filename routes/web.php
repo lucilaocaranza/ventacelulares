@@ -1,0 +1,24 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CelularController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+//Route::get('/', [CelularController::class,"index"]);
+//Route::get('/datoscelular', [CelularController::class,"create"]);
+
+Route::resource("/celular", CelularController::class);
+
+Route::get('/', function () {
+    return redirect('/celular');
+});
